@@ -20,7 +20,6 @@ const App = () => {
   const [contacts, setContacts] = useState(INITIAL_CONTACTS);
   const [filter, setFilter] = useState('');
 
-  // componentDidUpdate - Записуємо оновлений список контактів в LS при його зміні
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
@@ -51,13 +50,6 @@ const App = () => {
       name.toLocaleLowerCase().includes(normalizedFilter)
     );
   };
-
-  // const visibleContacts = useCallback(() => {
-  //   const normalizedFilter = filter.toLocaleLowerCase();
-  //   return contacts.filter(({ name }) =>
-  //     name.toLocaleLowerCase().includes(normalizedFilter)
-  //   );
-  // }, [filter, contacts]);
 
   return (
     <AppContainer>
